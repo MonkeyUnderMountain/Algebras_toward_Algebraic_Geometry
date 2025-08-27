@@ -1,15 +1,15 @@
 \documentclass[sectionlevel=book]{noteformyself}
 
 
-\input{../Accessories/notation.tex}                 % 加载符号定义文件
-\addbibresource{../Accessories/ref.bib}             % 添加参考文献文件
+\input{Accessories/notation.tex}                 % 加载符号定义文件
+\addbibresource{Accessories/ref.bib}             % 添加参考文献文件
 \newcommand{\Yang}[1]{\textcolor{red}{Yang: #1}}
 
 
-\title{}
+\title{Algebra toward Algebraic Geometry}
 \author{Tianle Yang}
 \date{\today}
-\authorpage{\href{https://www.tianleyang.com}{My Homepage}}
+\authorpage{\href{https://www.tianleyang.com}{https://www.tianleyang.com}}
 
 % available on the mode "\sectionlevel=chapter" or "\sectionlevel=book".
 \setCJKfamilyfont{lxgwwenkai}{LXGW WenKai} % 定义霞鹜文楷，若未安装，请去掉相关代码编译或使用其他字体
@@ -31,10 +31,18 @@
 
     \tableofcontents % 生成目录
 
-    % \chapter{}
-    %    \input{}
+    \chapter{Commutative Algebra}
+        \input{chapters/Commutative_algebra/elementary_results/text.tex}
+        \input{chapters/Commutative_algebra/associated_primes/text.tex}
+        \input{chapters/Commutative_algebra/dimension/text.tex}
+        \input{chapters/Commutative_algebra/integrally_closed_and_normal/text.tex}
+        \input{chapters/Commutative_algebra/regularity_and_smoothness/text.tex}
+        \input{chapters/Commutative_algebra/completion/text.tex}
 
-    % \chapter{}
+    \chapter{Homological Algebra}
+        \input{chapters/Homological_algebra/Complexes_and_Homology/text.tex}
+        \input{chapters/Homological_algebra/Derived_Functors/text.tex}
+        \input{chapters/Homological_algebra/Applications_to_Commutative_Algebra/text.tex}
 
     % \appendix
 
