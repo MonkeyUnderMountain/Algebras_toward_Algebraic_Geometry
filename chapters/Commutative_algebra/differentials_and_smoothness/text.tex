@@ -13,10 +13,12 @@
     \end{definition}
 
     Given a module homomorphism \(f: M \to N\) of \(A\)-modules and a derivation \(\P \in \Der_R(A, M)\), the map $f \circ \P$ is a derivation of \(A\) over \(R\) into \(N\).
+    This gives a functor \(\Der_R(A, -): \Mod_A \to \Mod_A.\)
 
     \begin{proposition}\label{prop: module of differentials}
         The functor \(\Der_R(A, -)\) is representable.
-        The representing object is denoted by \(\Omega_{A/R}\), which is called the \emph{module of differentials} of \(A\) over \(R\).
+        The representing object is denoted by \((\Omega_{A/R},\Psi)\), where \(\Psi:\Hom_A(\Omega_{A/R}, -) \to \Der_R(A, -)\) is given by pullback along a universal \(R\)-derivation \(\d_A: A \to \Omega_{A/R}\).
+        The module \(\Omega_{A/R}\) is called the \emph{module of differentials} of \(A\) over \(R\).
     \end{proposition}
     \begin{proof}
         First suppose \(A\) is a free \(R\)-algebra with a set of generators \(a_\lambda, \lambda \in \Lambda\).
