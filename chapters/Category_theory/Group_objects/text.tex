@@ -1,1 +1,97 @@
-\section{}
+\section{Group objects}
+
+    Let \(\bfC\) be a category with terminal object \(*\) and finite products.
+
+
+    \begin{definition}\label{def:group_objects}
+        A \emph{group object} in \(\bfC\) is an object \(G\) together with morphisms
+        \begin{itemize}
+            \item \(m: G \times G \to G\) (multiplication),
+            \item \(e: * \to G\) (identity),
+            \item \(i: G \to G\) (inverse),
+        \end{itemize}
+        such that the following diagrams commute:
+        \begin{itemize}
+            \item Associativity:
+            \[
+                \begin{tikzcd}
+                    G \times G \times G \arrow[r, "m \times \id_G"] \arrow[d, "\id_G \times m"'] & G \times G \arrow[d, "m"] \\
+                    G \times G \arrow[r, "m"'] & G
+                \end{tikzcd}
+            \]
+            \item Identity:
+            \[
+                \begin{tikzcd}
+                    * \times G \arrow[r, "e \times \id_G"] \arrow[dr, "\cong"'] & G \times G \arrow[d, "m"] & G \times * \arrow[l, "\id_G \times e"'] \arrow[dl, "\cong"] \\
+                    & G &
+                \end{tikzcd}
+            \]
+            \item Inverse:
+            \[
+                \begin{tikzcd}
+                    G \arrow[r, "\Delta"] & G \times G \arrow[r, "\id_G \times i"] & G \times G \arrow[r, "m"] & G \\
+                    & * \arrow[ul, "e"'] &
+                \end{tikzcd}
+            \]
+        \end{itemize}
+        \Yang{To be checked.}
+    \end{definition}
+
+
+    \begin{example}\label{eg:examples_of_group_object}
+        In the category of sets, a group object is just a group in the usual sense.
+        In the category of topological spaces, a group object is a topological group.
+        In the category of smooth manifolds, a group object is a Lie group.
+        \Yang{}
+    \end{example}
+
+    \begin{definition}\label{def:group_action_in_category_theory}
+        Let \(G\) be a group object in a category \(\bfC\) and \(X\) an object in \(\bfC\).
+        A \emph{group action} of \(G\) on \(X\) is a morphism
+        \[    \sigma: G \times X \to X \]
+        such that the following diagrams commute:
+        \begin{itemize}
+            \item Identity:
+            \[
+                \begin{tikzcd}
+                    * \times X \arrow[r, "e \times \id_X"] \arrow[dr, "\cong"'] & G \times X \arrow[d, "\sigma"] \\
+                    & X
+                \end{tikzcd}
+            \]
+            \item Compatibility:
+            \[
+                \begin{tikzcd}
+                    G \times G \times X \arrow[r, "m \times \id_X"] \arrow[d, "\id_G \times \sigma"'] & G \times X \arrow[d, "\sigma"] \\
+                    G \times X \arrow[r, "\sigma"'] & X
+                \end{tikzcd}
+            \]
+        \end{itemize}
+    \end{definition}
+
+    \begin{definition}\label{def:invariant_morphism}
+        Let \(G\) be a group object in a category \(\bfC\) acting on objects \(X, Y\) via actions \(\sigma_X, \sigma_Y\) respectively.
+        A morphism \(f: X \to Y\) is said to be \emph{\(G\)-invariant} if the following diagram commutes:
+        \[
+            \begin{tikzcd}
+                G \times X \arrow[r, "\sigma_X"] \arrow[d, "\id_G \times f"'] & X \arrow[d, "f"] \\
+                G \times Y \arrow[r, "\sigma_Y"'] & Y
+            \end{tikzcd}
+        \]
+        \Yang{}
+    \end{definition}
+
+
+    \begin{definition}\label{def:categorical_quotient}
+        Let \(G\) be a group object in a category \(\bfC\) acting on an object \(X\) via action \(\sigma\).
+        A \emph{categorical quotient} of \(X\) by \(G\) is an object \(Q\) with trivial \(G\)-action, together with a \(G\)-invariant morphism \(q: X \to Q\), 
+        such that for any object \(Y\) with trivial \(G\)-action and any \(G\)-invariant morphism \(f: X \to Y\), 
+        there exists a unique morphism \(\overline{f}: Q \to Y\) making the following diagram commute:
+        \[
+            \begin{tikzcd}
+                X \arrow[r, "q"] \arrow[dr, "f"'] & Q \arrow[d,gray, "\overline{f}"] \\
+                & Y
+            \end{tikzcd}
+        \]
+    \end{definition}
+
+    {\Large \Yang{Everything above need to be checked.}}
